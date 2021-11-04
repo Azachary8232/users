@@ -17,15 +17,24 @@ def new_form():
 
 @app.route('/users/create', methods=['POST'])
 def create():
-    print(request.form) 
     User.create(request.form)
     return redirect('/users')
 
 @app.route('/user/<int:id>')
 def show_user(id):
     data = {"id":id}
-    print(data)
     return render_template('user.html', user=User.get_one(data))
+
+@app.route('/user/edit/<int:id>')
+def user_edit(id):
+    data= {'id':id}
+    return render_template('edit_user.html', user=User.get_one(data))
+
+@app.route('/edit', methods=['POST'])
+def edit():
+    User.edit(request.form)
+    return redirect('/users')
+
 
 
 
