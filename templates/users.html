@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>All Users</h1>
+    <form class="form" action="">
+        <table>
+            <thead>
+                <tr>
+                    <td class="boxR tableHead">ID</td>
+                    <td class="boxR tableHead">Full Name</td>
+                    <td class="boxR tableHead">Email</td>
+                    <td class="boxR tableHead">Created At</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td class="boxR">{{user.id}}</td>
+                    <td class="boxR">{{user.first_name }}{{user.last_name}}</td>
+                    <td class="boxR">{{user.email}}</td>
+                    <td class="boxR">{{user.created_at}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+    <div class="tag"> 
+        <a href="">Add a New User</a>
+    </div> 
+</div>
+
+
+
+
+
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

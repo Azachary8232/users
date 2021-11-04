@@ -1,9 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
+from model_users import User
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    return render_template("index.html")
+def index():
+    return redirect('/users')
+
+@app.route('/users')
+def users():
+    return render_template('users.html', users = User.get_all())
+
 
 
 
