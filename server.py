@@ -11,13 +11,14 @@ def users():
     return render_template('users.html', users = User.get_all())
 
 
-@app.route('/users/new')
+@app.route('/users/create_user')
 def new_form():
     return render_template("add_new_user.html")
 
-@app.route('/user/create', methods=['POST'])
+@app.route('/users/create', methods=['POST'])
 def create():
     print(request.form) 
+    User.create(request.form)
     return redirect('/users')
 
 

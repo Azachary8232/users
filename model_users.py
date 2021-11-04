@@ -18,3 +18,9 @@ class User:
             users.append( cls(user) )
         print(users)
         return users
+
+    @classmethod
+    def create(cls, data):
+        query = "INSERT INTO users (first_name, last_name, email) VALUES (%(first_name)s, %(last_name)s, %(email)s); "
+        result = connectToMySQL('users').query_db(query, data)
+        return result
