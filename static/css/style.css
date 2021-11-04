@@ -31,3 +31,12 @@
 .tag{
     margin-top: 25px;
 }
+
+.table{
+    border: 3px solid black;
+    margin-top: 25px;
+}
+
+.table tr{
+    margin: 15px 5px;
+}

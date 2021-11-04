@@ -20,6 +20,7 @@
                     <td class="boxR tableHead">Full Name</td>
                     <td class="boxR tableHead">Email</td>
                     <td class="boxR tableHead">Created At</td>
+                    <td class="boxR tableHead">Actions</td>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,11 @@
                     <td class="boxR">{{user.first_name }}{{user.last_name}}</td>
                     <td class="boxR">{{user.email}}</td>
                     <td class="boxR">{{user.created_at}}</td>
+                    <td>
+                        <a href="/user">Show |</a>
+                        <a href="">Edit |</a>
+                        <a href="">Delete</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

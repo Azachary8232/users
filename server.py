@@ -21,6 +21,10 @@ def create():
     User.create(request.form)
     return redirect('/users')
 
+@app.route('/user')
+def user():
+    return render_template('user.html')
+
 
 
 
