@@ -15,6 +15,10 @@
     display: inline-block;
 }
 
+.form div{
+    margin-top: 25px;
+}
+
 .boxR{
     border-right: 1px solid black;
     padding: 0px 5px;
