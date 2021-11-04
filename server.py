@@ -21,9 +21,11 @@ def create():
     User.create(request.form)
     return redirect('/users')
 
-@app.route('/user')
-def user():
-    return render_template('user.html')
+@app.route('/user/<int:id>')
+def show_user(id):
+    data = {"id":id}
+    print(data)
+    return render_template('user.html', user=User.get_one(data))
 
 
 

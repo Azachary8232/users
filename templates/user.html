@@ -10,23 +10,23 @@
 <body>
 
 <div class="container" >
-    <h1>User ?</h1>
+    <h1>User {{user.id}}</h1>
     <table class="table" >
         <tr>
             <td>Full Name:</td>
-            <td>Sample</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
         </tr>
         <tr>
             <td>Email:</td>
-            <td>Sample</td>
+            <td>{{user.email}}</td>
         </tr>
         <tr>
             <td>Created On:</td>
-            <td>Sample</td>
+            <td>{{user.created_at}}</td>
         </tr>
         <tr>
             <td>Last Updated On:</td>
-            <td>Sample</td>
+            <td>{{user.updated_at}}</td>
         </tr>
     </table>
     <div class="tag" >
