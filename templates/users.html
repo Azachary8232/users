@@ -27,13 +27,13 @@
                 {% for user in users %}
                 <tr>
                     <td class="boxR">{{user.id}}</td>
-                    <td class="boxR">{{user.first_name }}{{user.last_name}}</td>
+                    <td class="boxR">{{user.first_name }} {{user.last_name}}</td>
                     <td class="boxR">{{user.email}}</td>
                     <td class="boxR">{{user.created_at}}</td>
                     <td>
                         <a href="/user/{{user.id}}">Show |</a>
                         <a href="/user/edit/{{user.id}}">Edit |</a>
-                        <a href="">Delete</a>
+                        <a href="/user/delete/{{user.id}}">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
