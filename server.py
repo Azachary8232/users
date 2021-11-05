@@ -17,8 +17,9 @@ def new_form():
 
 @app.route('/users/create', methods=['POST'])
 def create():
-    User.create(request.form)
-    return redirect('/users')
+    id = User.create(request.form)
+    print(id)
+    return redirect(f'/user/{id}')
 
 @app.route('/user/<int:id>')
 def show_user(id):
@@ -33,7 +34,8 @@ def user_edit(id):
 @app.route('/edit', methods=['POST'])
 def edit():
     User.edit(request.form)
-    return redirect('/users')
+    id = request.form.get('id')
+    return redirect(f'/user/{id}')
 
 @app.route('/user/delete/<int:id>')
 def delete(id):
